@@ -82,11 +82,25 @@ const updateBudgetById = async (req, res) => {
 
 const deleteBudgetById = async (req, res) => {
   try {
+    const loggedInUserId = req.user.payload.userId;
+    const loggedInUser = await User.findById(loggedInUserId);
     const budgetId = req.params.budgetId;
     const budget = await Budget.findByIdAndDelete(budgetId);
     if (!budget) {
       res.status(404).json({ message: "Budget not found" });
     }
+    const budgetIndex = loggedInUser.budgets.findIndex(
+      (bud) => bud._id.toString() === budgetId
+    );
+
+    if (budgetIndex === -1) {
+      return res.status(404).json({ message: "Expense not found" });
+    }
+
+    // Remove the expense from the array
+    budget.expenses.splice(expenseIndex, 1);
+
+    await budget.save();
     res.status(200).json({ message: "Budget deleted successfully" });
   } catch (error) {
     console.log(error);
