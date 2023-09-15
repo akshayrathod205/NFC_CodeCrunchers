@@ -3,16 +3,16 @@ const Budget = require("../models/Budget");
 
 const createBudget = async (req, res) => {
   try {
-    const { name, amount, expenses } = req.body;
+    const { name, amount } = req.body;
     const loggedInUerId = req.user.payload.userId;
     const loggedInUser = await User.findById(loggedInUerId);
     if (!loggedInUser) {
       res.status(404).json({ message: "User not found" });
+      return;
     }
     const budget = new Budget({
       name: name,
       amount: amount,
-      expenses: expenses,
     });
     await budget.save();
 
