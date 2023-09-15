@@ -28,11 +28,10 @@ const budgetSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Please provide an amount"],
     },
-    description: {
-      type: String,
-      required: [true, "Please provide a description"],
+    expense: {
+      type: [expenseSchema],
+      default: [],
     },
-    expense: [expenseSchema],
   },
   { timestamps: true }
 );
