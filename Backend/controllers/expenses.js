@@ -86,12 +86,21 @@ const updateExpenseById = async (req, res) => {
 const deleteExpenseById = async (req, res) => {
   try {
     const budgetId = req.params.budgetId;
+    const expenseId = req.params.expenseId;
     const budget = await Budget.findById(budgetId);
     if (!budget) {
-      res.status(404).json({ message: "Budget not found" });
+      return res.status(404).json({ message: "Budget not found" });
     }
-    const expenseId = req.params.expenseId;
-    budget.expense.id(expenseId).remove();
+    const expenseIndex = budget.expense.findIndex(
+      (expense) => expense._id.toString() === expenseId
+    );
+
+    if (expenseIndex === -1) {
+      return res.status(404).json({ message: "Budget not found" });
+    }
+
+    budget.expense.splice(expenseIndex, 1);
+
     await budget.save();
     res.status(200).json({ message: "Expense deleted successfully" });
   } catch (error) {

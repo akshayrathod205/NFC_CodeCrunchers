@@ -1,22 +1,19 @@
 const mongoose = require("mongoose");
 
-const expenseSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "Please provide a name"],
-    },
-    amount: {
-      type: Number,
-      required: [true, "Please provide an amount"],
-    },
-    date: {
-      type: Date,
-      required: [true, "Please provide a date"],
-    },
+const expenseSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Please provide a name"],
   },
-  { _id: false }
-);
+  amount: {
+    type: Number,
+    required: [true, "Please provide an amount"],
+  },
+  date: {
+    type: Date,
+    required: [true, "Please provide a date"],
+  },
+});
 
 const budgetSchema = new mongoose.Schema(
   {
