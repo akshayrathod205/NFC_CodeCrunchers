@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const secret = process.env.JWT_SECRET;
 
 const userSchema = new mongoose.Schema(
   {
@@ -46,6 +49,10 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+userSchema.methods.createJWT = function () {
+  return jwt.sign({ userId: this._id }, secret, { expiresIn: "1d" });
+};
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;

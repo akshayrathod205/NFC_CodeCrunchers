@@ -1,8 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
-const secret = process.env.JWT_SECRET;
+
 
 const userSignup = async (req, res) => {
   try {
@@ -51,9 +49,7 @@ const userLogin = async (req, res) => {
     if (loggedInUser) {
       const isMatch = await bcrypt.compare(password, loggedInUser.password);
       if (isMatch) {
-        const token = jwt.sign({ userId: this._id }, secret, {
-          expiresIn: "1d",
-        });
+        const token = loggedInUser.createJWT();
         res.status(200).json({
           message: "Login successful",
           token: token,
