@@ -4,7 +4,7 @@ import openai
 app = Flask(__name__)
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = ''
 
 # Define some general questions
 general_questions = [
