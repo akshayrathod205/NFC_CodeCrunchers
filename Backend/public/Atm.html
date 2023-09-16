@@ -1,0 +1,196 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Withdrawal Guide</title>
+    <!-- Include Bootstrap CSS and JS files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for curved borders, radius, and color */
+        .accordion-item {
+            border: 2px solid #5EBE30;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button {
+            background-color: #5EBE30;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #5EBE30;
+        }
+
+        .accordion-body {
+            border-top: 1px solid #5EBE30;
+        }
+       
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="container mt-5">
+        <div class="accordion" id="accordionExample">
+            <!-- Step 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Step 1: Insert ATM Card
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Insert your ATM Card in the ATM machine in the slot as marked in the above diagram.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Step 2: Select Language
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Select your language from the language options appearing on the display screen.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Step 3: Enter 4-Digit ATM Pin
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Use the Keypad to enter your 4-digit ATM Pin Number. Do not share your ATM Pin with anyone.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Step 4: Select the type of Transaction
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        On the ATM screen, select the type of transaction. For cash withdrawal, choose the Withdrawal Option.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Step 5: Select the Type of Account
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        After selecting the cash withdrawal option, choose your account type (e.g., savings account).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Step 6: Enter the withdrawal amount
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Enter the withdrawal amount. Make sure not to exceed your account balance.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Step 7: Collect the Cash
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Collect the cash from the machine.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Step 8: Take a printed receipt, if needed
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        You can choose to get a printed receipt for the transaction if needed.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        Step 9: Another Transaction
+                    </button>
+                </h2>
+                <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        If you want to undertake another transaction, you can select that option.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center;"> <!-- Adjust the width as needed, for example, 80% -->
+            <img src="banner.png" alt="" width="900px">
+            
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <img src="bob.png" alt="" width="350px">
+            <img src="sbi.svg" alt="" width="100px">
+            <img src="hdfc.svg" alt="" width="100px">
+            <img src="pnb.svg" alt="" width="100px">
+        </div>
+        <h3><a href="https://www.bankofbaroda.in/-/media/project/bob/countrywebsites/india/content/download-forms/personal/aof-for-individual-english-and-hindi-28-07.pdf">Download Bank of Baroda Account Opening Form</a></h3>
+        <h3><a href="https://sbi.co.in/documents/21077/44022/1277812934866_NRI_AC_OPENING_FORM1.pdf">Download SBI Account Opening Form</a></h3>
+        <h3><a href="https://www.hdfcbank.com/content/bbp/repositories/723fb80a-2dde-42a3-9793-7ae1be57c87f/?path=/Footer/Resource/Forms%20Centre/Content/Detail%20Page/Forms%20Center%20-personal/Final_Aof_revised%20%281%29.pdf">Download HDFC Account Opening Form</a></h3>
+        <h3><a href="https://www.pnbindia.in/document/download-form/aof_revised.pdf">Download Punjab national Bank Account Opening Form</a></h3>
+    </div>
+</body>
+</html>

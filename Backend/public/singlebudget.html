@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="singlebudget.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+  <div class="navbar">
+    <a
+      href="#home"
+      style="color: rgb(6, 75, 4); font-size: 30px; padding: 10px"
+      >Financia</a
+    >
+    <a href="dashboard.html">Home</a>
+    <a href="#news">About</a>
+    <a href="/Backend/public/chatbot/templates/chatbot.html">Chatbot</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Fin-Edu
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="financialbasics.html">Finance Basics</a>
+        <a href="financial.html">Financial Goals</a>
+        <a href="debt-management.html">Debt Management</a>
+        <a href="retirement-planning.html">Retirement Management</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Banking Section
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="welcome.html">Accounts</a>
+        <a href="Opening Account.html">Opening Accounts</a>
+        <a href="Atm.html">ATM Usages</a>
+        <a href="card.html">Credit & Loans</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Resources
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="budget.html">Expense Tracker</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="educational.html">E-Learning</a>
+      </div>
+    </div>
+    <a href="#">Contact</a>
+    <a href="#" style="margin-left: 700px">Logout</a>
+  </div>
+    <div class="container">
+        <div class="card">
+          <h2>Add an Expense</h2>
+          <form>
+            <label for="username"> Name</label>
+            <input type="text" id="expense-name" placeholder="Enter name" required>
+      
+            <label for="password"> Amount</label>
+            <input type="text" id="expense-amt" placeholder="Enter amount" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="expense-date" required>
+            <button type="submit" id="submit">Add</button>
+          </form>
+        </div>    
+      </div>
+      <!-- Add a new div for the table -->
+      <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Delete</th>
+                
+            </tr>
+            </thead>
+            <tbody id="expense-list">
+            <!-- <tr>
+                <td>Content 1</td>
+                <td>Content 1</td>
+                <td> <button>Delete</button></td>
+               
+            </tr> -->
+            <tbody>
+        </table>
+    </div>
+  </div>
+    
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  <script src="singlebudget.js"></script>
+</body>
+</html>

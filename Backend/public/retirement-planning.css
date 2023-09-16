@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 60px 100px;
+}
+
+.content {
+  width: 80%;
+  height: 100%;
+  padding: 50px;
+  padding-top: 0;
+  margin-top: 0;
+  border-radius: 10px;
+}
+
+.side-bar {
+  width: 20%;
+  height: 100%;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.main-header {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 150px;
+}
+
+.header-content p {
+  font-size: 18px;
+}
+
+.ret-list {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  margin-top: 0;
+}
+
+.ret-list ul {
+  padding: 10px;
+  margin: 10px;
+}
+
+.ret-list ul li {
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+}
+
+.dyk {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.calc-container {
+  background-color: #4caf50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+}
+
+.calc-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.input-label {
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.input-field {
+  flex: 2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.calculate-button {
+  background-color: #357a38;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculate-button:hover {
+  background-color: #2e5727;
+}
+
+.chart-container {
+  margin-top: 20px;
+}

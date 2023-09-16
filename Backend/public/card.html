@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Showcase</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .credit-card-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .credit-card {
+        width: 600px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .credit-card1 {
+        width: 280px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        margin-top: 0px;
+      }
+
+      .card-section {
+        flex: 1;
+        position: relative;
+      }
+
+      .card-image {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .arrow {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #f53b57;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+      }
+
+      .arrow-top {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .arrow-bottom {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+      }
+
+      .card-back {
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .description {
+        text-align: justify;
+        color: #042e02;
+        padding: 10px;
+      }
+
+      /* Additional cards */
+      .credit-card:nth-child(2),
+      .credit-card:nth-child(3) {
+        margin-left: 20px;
+      }
+
+      /* Additional card images */
+      .card-image:nth-child(2) {
+        background-image: url("card2.jpg");
+        /* Replace with your image URL */
+      }
+
+      .card-image:nth-child(3) {
+        background-image: url("card3.jpg");
+        /* Replace with your image URL */
+      }
+
+      .setting {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .gg {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mainDiv {
+        display: flex;
+        flex-direction: column;
+        margin-top: 800px;
+        margin-left: 100px;
+      }
+
+      /* EMI Calculator styles */
+      #emi-chart {
+        border-color: #00ff00;
+        color: #00ff00;
+      }
+
+      .calculator {
+        background-color: #fff;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+      }
+
+      .calculator-title {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      .calculator-form {
+        margin-top: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 5px;
+      }
+
+      .calculator-results {
+        margin-top: 20px;
+      }
+
+      .result {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .result label {
+        font-weight: bold;
+      }
+
+      .result span {
+        font-weight: normal;
+      }
+
+      #calculate-button {
+        background-color: #097538;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+      #calculate-button:hover {
+        background-color: #12b01a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a
+        href="#home"
+        style="color: rgb(6, 75, 4); font-size: 30px; padding: 10px"
+        >Financia</a
+      >
+      <a href="dashboard.html">Home</a>
+      <a href="#news">About</a>
+      <a href="/Backend/public/chatbot/templates/chatbot.html">Chatbot</a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Fin-Edu
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="financialbasics.html">Finance Basics</a>
+          <a href="financial.html">Financial Goals</a>
+          <a href="debt-management.html">Debt Management</a>
+          <a href="retirement-planning.html">Retirement Management</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Banking Section
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="welcome.html">Accounts</a>
+          <a href="Opening Account.html">Opening Accounts</a>
+          <a href="Atm.html">ATM Usages</a>
+          <a href="card.html">Credit & Loans</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Resources
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="budget.html">Expense Tracker</a>
+          <a href="quiz.html">Quiz</a>
+          <a href="educational.html">E-Learning</a>
+        </div>
+      </div>
+      <a href="#">Contact</a>
+      <a href="#" style="margin-left: 700px">Logout</a>
+    </div>
+    <div class="mainDiv">
+      <div class="credit-card-container">
+        <!-- Main Card -->
+        <div class="credit-card">
+          <div class="description">
+            <h2>What is a Credit Card?</h2>
+            <p>
+              A credit card is a plastic card that allows you to borrow money
+              from a bank or financial institution to make purchases or pay
+              bills. It is a form of unsecured debt and requires you to repay
+              the borrowed amount with interest.
+            </p>
+          </div>
+          <div class="card-section">
+            <img
+              class="card-image"
+              src="CARDS-removebg-preview.png"
+              alt="Front of Credit Card"
+            />
+          </div>
+        </div>
+        <div class="gg">
+          <div class="setting">
+            <!-- Additional Cards -->
+            <div class="credit-card1">
+              <div class="description">
+                <h2>
+                  <img
+                    src="payment-method.png"
+                    alt="Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Payments Platform
+                </h2>
+                <li>Visa Debit Card</li>
+                <li>MasterCard Debit Card</li>
+                <li>RuPay Debit Card</li>
+              </div>
+              <div class="card-section">
+                <div class="card-image"></div>
+              </div>
+            </div>
+            <div class="credit-card1">
+              <div class="description">
+                <h2>
+                  <img src="tech.png" alt="Logo" width="25" height="25" />
+                  Technology
+                </h2>
+                <li>Contactless Debit Card</li>
+                <li>Chip & Pin Debit Card</li>
+                <li>Magnetic Stripe Debit Card</li>
+              </div>
+            </div>
+            <div class="card-section">
+              <div class="card-image"></div>
+            </div>
+          </div>
+          <div class="credit-card">
+            <div class="description">
+              <h2>Types of Credit Card?</h2>
+              <ol>
+                <li>Standard Credit Cards</li>
+                <li>
+                  <img
+                    src="rewards.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Rewards Credit Cards
+                </li>
+                <li>
+                  <img
+                    src="cashback.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Cashback Credit Cards
+                </li>
+                <li>
+                  <img
+                    src="travel.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Travel Credit Cards
+                </li>
+                <li>
+                  <img
+                    src="airline.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Airline Credit Cards
+                </li>
+                <li>
+                  <img
+                    src="hotel.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Hotel Credit Cards
+                </li>
+                <li>
+                  <img
+                    src="buisness.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Business Credit Cards
+                </li>
+                <li>
+                  <img
+                    src="student.png"
+                    alt="Rewards Credit Cards Logo"
+                    width="25"
+                    height="25"
+                  />
+                  Student Credit Cards
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="types-of-loans">
+        <h2>Types of Loans</h2>
+        <p>
+          Loans are financial instruments that allow individuals and businesses
+          to borrow money for various purposes. Here's a more detailed look at
+          common types of loans:
+        </p>
+        <ul>
+          <li>
+            <strong>Personal Loans:</strong>
+            Most banks offer personal loans to their customers. These are
+            unsecured loans used for personal expenses like paying bills or
+            purchasing items like televisions. Applicants typically need to
+            provide proof of assets and income. The application process is
+            usually 1 or 2 pages, and approval or denial is quick.
+            <br />
+            Personal loans can have higher interest rates, and their tenure is
+            not very long. Planning your finances properly is essential if you
+            borrow a substantial amount.
+          </li>
+          <li>
+            <strong>Credit Card Loans:</strong>
+            Credit cards are widely accepted and convenient for making
+            purchases, including travel. Applying for a credit card is simple,
+            either through a provided form or online. While they offer rewards
+            and benefits, credit cards also come with high-interest rates if you
+            don't pay your bills on time.
+          </li>
+          <li>
+            <strong>Home Loans:</strong>
+            Home loans are long-term loans used to buy or refinance real estate
+            properties. They often come with longer tenures and lower interest
+            rates, especially for applicants with good credit scores.
+          </li>
+          <li>
+            <strong>Car Loans:</strong>
+            Car loans help finance vehicle purchases, and they are secured by
+            the purchased vehicle. A higher credit score can lead to easier
+            approval and lower interest rates.
+          </li>
+          <li>
+            <strong>Two-Wheeler Loans:</strong>
+            Two-wheeler loans are used to purchase bikes or scooters. They are
+            relatively easy to apply for, but if you don't make payments on
+            time, the lender can repossess your two-wheeler.
+          </li>
+          <li>
+            <strong>Small Business Loans:</strong>
+            These loans support small and medium-sized businesses for various
+            purposes such as equipment purchases, inventory, salaries,
+            marketing, debt payments, and business growth. Eligibility criteria
+            vary by lender.
+          </li>
+          <li>
+            <strong>Payday Loans:</strong>
+            Payday loans, also known as salary loans, are unsecured short-term
+            loans requiring steady employment and income. They usually have high
+            interest rates and require salary statements as proof of income.
+          </li>
+        </ul>
+      </div>
+
+      <div class="calculator">
+        <h1 class="calculator-title">EMI Calculator</h1>
+        <div class="calculator-form">
+          <div class="form-group">
+            <label for="loan-amount">Loan Amount (INR)</label>
+            <input
+              type="number"
+              id="loan-amount"
+              min="0"
+              placeholder="Enter Loan Amount"
+            />
+          </div>
+          <div class="form-group">
+            <label for="interest-rate">Interest Rate (%)</label>
+            <input
+              type="number"
+              id="interest-rate"
+              min="0"
+              step="0.01"
+              placeholder="Enter Interest Rate"
+            />
+          </div>
+          <div class="form-group">
+            <label for="loan-tenure">Loan Tenure (Months)</label>
+            <input
+              type="number"
+              id="loan-tenure"
+              min="0"
+              placeholder="Enter Loan Tenure"
+            />
+          </div>
+          <button id="calculate-button">Calculate EMI</button>
+        </div>
+        <div class="calculator-results">
+          <div class="result">
+            <label>EMI:</label>
+            <span id="emi-result">0</span>
+          </div>
+          <canvas id="emi-chart" width="400" height="200"></canvas>
+        </div>
+      </div>
+      <footer>
+        <div class="container flex footer-container">
+          <a href="#" class="company-logo">
+            <h1 class="logo">Financia</h1>
+          </a>
+          <div class="link-column flex">
+            <h4>Product</h4>
+            <a href="#" class="hover-link">Overview</a>
+            <a href="#" class="hover-link">Pricing</a>
+            <a href="#" class="hover-link">UsabilityHub panel</a>
+            <a href="#" class="hover-link"> Customers</a>
+            <a href="#" class="hover-link">Status page</a>
+          </div>
+
+          <div class="link-column flex">
+            <h4>Methodologies</h4>
+            <a href="#" class="hover-link">Card sorting</a>
+            <a href="#" class="hover-link"> Prototype testing</a>
+            <a href="#" class="hover-link">First click tests</a>
+            <a href="#" class="hover-link"> Preference tests</a>
+            <a href="#" class="hover-link">Five second tests</a>
+          </div>
+
+          <div class="link-column flex">
+            <h4>Resources</h4>
+            <a href="#" class="hover-link">Blog</a>
+            <a href="#" class="hover-link">Examples</a>
+            <a href="#" class="hover-link">Testing guides</a>
+            <a href="#" class="hover-link"> Help center</a>
+            <a href="#" class="hover-link">Contact</a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- sub footer -->
+      <div class="subfooter">
+        <div class="container flex subfooter-container">
+          <a href="#" class="hover-link">Privacy policy</a>
+          <a href="#" class="hover-link">Terms & Condition</a>
+          <a href="#" class="hover-link">Security Information</a>
+          <a class="hover-link" href="#"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a class="hover-link" href="#"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const calculateButton = document.getElementById("calculate-button");
+          calculateButton.addEventListener("click", calculateEMI);
+
+          function calculateEMI() {
+            const loanAmount = parseFloat(
+              document.getElementById("loan-amount").value
+            );
+            const interestRate = parseFloat(
+              document.getElementById("interest-rate").value
+            );
+            const loanTenure = parseFloat(
+              document.getElementById("loan-tenure").value
+            );
+
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTenure)) {
+              alert("Please enter valid numbers for all fields.");
+              return;
+            }
+
+            const monthlyInterestRate = interestRate / 12 / 100;
+            const emi =
+              (loanAmount * monthlyInterestRate) /
+              (1 - Math.pow(1 + monthlyInterestRate, -loanTenure));
+
+            const emiChartData = calculateEMIChart(
+              loanAmount,
+              monthlyInterestRate,
+              loanTenure,
+              emi
+            );
+            document.getElementById("emi-result").textContent = emi.toFixed(2);
+
+            // Update the chart
+            updateChart(emiChartData);
+          }
+
+          function calculateEMIChart(
+            loanAmount,
+            monthlyInterestRate,
+            loanTenure,
+            emi
+          ) {
+            const emiChartData = [];
+            let remainingAmount = loanAmount;
+
+            for (let month = 1; month <= loanTenure; month++) {
+              const interestPayment = remainingAmount * monthlyInterestRate;
+              const principalPayment = emi - interestPayment;
+              remainingAmount -= principalPayment;
+
+              emiChartData.push({
+                month,
+                remainingAmount: remainingAmount.toFixed(2),
+              });
+            }
+
+            return emiChartData;
+          }
+
+          function updateChart(emiChartData) {
+            const ctx = document.getElementById("emi-chart").getContext("2d");
+
+            const chart = new Chart(ctx, {
+              type: "line",
+              data: {
+                labels: emiChartData.map((data) => `Month ${data.month}`),
+                datasets: [
+                  {
+                    label: "Remaining Loan Amount",
+                    borderColor: "#007bff",
+                    fill: false,
+                    data: emiChartData.map((data) => data.remainingAmount),
+                  },
+                ],
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              },
+            });
+          }
+        });
+      </script>
+
+      <!-- "Toggle EMI Calculator" button -->
+      <!-- <button id="toggle-calculator-button" style="margin-top: 20px;">Toggle EMI Calculator</button> -->
+
+      <!-- EMI Calculator Section (hidden by default) -->
+      <!-- <div class="calculator" id="emi-calculator" style="display: none;">
+            <h1 class="calculator-title">EMI Calculator</h1>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="loan-amount">Loan Amount (INR)</label>
+                    <input type="number" id="loan-amount" min="0" placeholder="Enter Loan Amount">
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Interest Rate (%)</label>
+                    <input type="number" id="interest-rate" min="0" step="0.01" placeholder="Enter Interest Rate">
+                </div>
+                <div class="form-group">
+                    <label for="loan-tenure">Loan Tenure (Months)</label>
+                    <input type="number" id="loan-tenure" min="0" placeholder="Enter Loan Tenure">
+                </div>
+                <button id="calculate-button">Calculate EMI</button>
+            </div>
+            <div class="calculator-results">
+                <div class="result">
+                    <label>EMI:</label>
+                    <span id="emi-result">0</span>
+                </div>
+                <canvas id="emi-chart" width="400" height="200"></canvas>
+            </div>
+        </div> -->
+    </div>
+  </body>
+</html>

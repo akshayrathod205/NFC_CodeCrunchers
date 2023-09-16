@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: [true, "Please provide an email address"],
+      match: [
+        /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
+        "Please provide a valid email",
+      ],
       unique: true,
     },
     password: {
@@ -43,6 +47,10 @@ const userSchema = new mongoose.Schema(
       required: [true, "Please provide a password"],
     },
     budgets: {
+      type: Array,
+      default: [],
+    },
+    messages: {
       type: Array,
       default: [],
     },

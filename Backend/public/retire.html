@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Budget Calculator</title>
+    <style>
+       body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: #4CAF50;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #fff;
+    }
+
+    .container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .input-label {
+        flex: 1;
+        text-align: left;
+        margin-right: 10px;
+    }
+
+    .input-field {
+        flex: 2;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .input-field:focus {
+        outline: none;
+    }
+
+    .calculate-button {
+        background-color: #357a38;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .calculate-button:hover {
+        background-color: #2e5727;
+    }
+
+    .chart-container {
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Retirement Budget Calculator</h1>
+        <div class="input-container">
+            <label class="input-label" for="currentAge">Current Age:</label>
+            <input type="number" id="currentAge" class="input-field" placeholder="Enter current age" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="monthlyExpense">Current Monthly Expense (INR):</label>
+            <input type="number" id="monthlyExpense" class="input-field" placeholder="Enter monthly expense" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="retirementAge">Desired Retirement Age:</label>
+            <input type="number" id="retirementAge" class="input-field" placeholder="Enter desired retirement age" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="corpusLastYears">Corpus Should Last Till (Years After Retirement):</label>
+            <input type="number" id="corpusLastYears" class="input-field" placeholder="Enter years corpus should last" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="existingSavings">Existing Savings (INR) (Expected to grow by 7% per year):</label>
+            <input type="number" id="existingSavings" class="input-field" placeholder="Enter existing savings" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="monthlyIncomePostRetirement">Monthly Income Post Retirement (INR):</label>
+            <input type="number" id="monthlyIncomePostRetirement" class="input-field" placeholder="Enter monthly income" required>
+        </div>
+        <button onclick="calculateRetirementBudget()" class="calculate-button">Calculate</button>
+
+        <div class="chart-container">
+            <canvas id="retirementChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Function to calculate retirement budget and display the chart
+        function calculateRetirementBudget() {
+            const currentAge = parseFloat(document.getElementById('currentAge').value);
+            const monthlyExpense = parseFloat(document.getElementById('monthlyExpense').value);
+            const retirementAge = parseFloat(document.getElementById('retirementAge').value);
+            const corpusLastYears = parseFloat(document.getElementById('corpusLastYears').value);
+            const existingSavings = parseFloat(document.getElementById('existingSavings').value);
+            const monthlyIncomePostRetirement = parseFloat(document.getElementById('monthlyIncomePostRetirement').value);
+            const currentYear = new Date().getFullYear();
+    
+            // Calculate the retirement corpus needed
+            const yearsInRetirement = retirementAge - currentAge + corpusLastYears;
+            let annualExpenses = 0;
+            let cumulativeSavings = existingSavings;
+            const savingsEachMonth = [];
+    
+            for (let i = 1; i <= yearsInRetirement; i++) {
+                annualExpenses += (monthlyExpense - monthlyIncomePostRetirement) * 12 / Math.pow(1.07, i);
+            }
+    
+            // Calculate monthly savings
+            for (let i = 1; i <= yearsInRetirement * 12; i++) {
+                const monthlyExpenseAfterRetirement = (monthlyExpense - monthlyIncomePostRetirement) * 12 / Math.pow(1.07, Math.ceil(i / 12));
+                cumulativeSavings += monthlyExpenseAfterRetirement;
+                savingsEachMonth.push(cumulativeSavings);
+            }
+    
+            // Display required corpus
+            alert(`Required Retirement Corpus: INR ${annualExpenses.toFixed(2)}`);
+    
+            // Create a line chart using Chart.js
+            const ctx = document.getElementById('retirementChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: yearsInRetirement * 12 }, (_, i) => (currentYear + Math.floor(i / 12)).toString()),
+                    datasets: [{
+                        label: 'Cumulative Savings (INR)',
+                        data: savingsEachMonth,
+                        fill: false,
+                        borderColor: 'white',
+                        pointBackgroundColor: 'white',
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'white'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            maxTicksLimit: 5
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

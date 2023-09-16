@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="budget.css" />
+  </head>
+  <body>
+    <!-- create budget -->
+    <div class="container">
+      <div class="card">
+        
+        <h3>Create Budget</h3>
+        <form>
+          
+       
+          <label for="username">Budget Name</label>
+          <input class = "text-field"
+            type="text"
+            id="budget-name"
+            placeholder="Enter budget name"
+            id
+          />
+
+          <label for="password">Budget Amount</label>
+          <input class = "text-field"
+            type="text"
+            id="budget-amt"
+            placeholder="Enter budget amount"
+          />
+
+          <button type="submit" id="submit">Submit</button>
+          <img src="budgetpic.svg" alt="Your Image" class="card-image" style="width: 500px; margin-top: 0px; ">
+        
+        </form>
+        <!-- progress bar -->
+        <div class="progresscard">
+          <h2>Data Loading Card</h2>
+          <div class="progress">
+              <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <div class="data-container">
+              <p>Data will be displayed here</p>
+          </div>
+      </div>
+      <div>
+        <div>
+          
+        </div>
+      </div>
+  
+
+      </div>
+      
+  <script src="progressbar.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="budget.js"></script>
+  </body>
+</html>

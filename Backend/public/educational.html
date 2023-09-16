@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="educational.css" />
+    <title>Educational</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-bar">
+        <ul>
+          <li><a href="#" data-category="all">All</a></li>
+          <li><a href="#" data-category="basics">Financial Basics</a></li>
+          <li><a href="#" data-category="goals">Financial Goals</a></li>
+          <li><a href="#" data-category="debt">Debt Management</a></li>
+          <li><a href="#" data-category="insurance">Insurance</a></li>
+          <li><a href="#" data-category="invest">Investing</a></li>
+          <li><a href="#" data-category="sip">SIP</a></li>
+          <li><a href="#" data-category="mutual">Mutual Funds</a></li>
+          <li>
+            <a href="#" data-category="retirement">Retirement Planning</a>
+          </li>
+        </ul>
+        <div class="calc-container" id="sipCalculator">
+          <h1>SIP Calculator</h1>
+          <div class="input-container">
+            <label class="input-label" for="investmentAmount"
+              >Monthly Investment Amount (INR):</label
+            >
+            <input
+              type="number"
+              id="investmentAmount"
+              class="input-field"
+              placeholder="Enter amount"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="interestRate"
+              >Annual Interest Rate (%):</label
+            >
+            <input
+              type="number"
+              id="interestRate"
+              class="input-field"
+              placeholder="Enter interest rate"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="investmentDuration"
+              >Investment Duration (in years):</label
+            >
+            <input
+              type="number"
+              id="investmentDuration"
+              class="input-field"
+              placeholder="Enter duration"
+              required
+            />
+          </div>
+          <button onclick="calculateSIP()" class="calculate-button">
+            Calculate
+          </button>
+
+          <div class="chart-container">
+            <canvas id="sipChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+        <div class="calc-container" id="mutualFundCalculator">
+          <h1>Mutual Fund Calculator</h1>
+          <div class="input-container">
+            <label class="input-label" for="totalInvestment"
+              >Total Investment (INR):</label
+            >
+            <input
+              type="number"
+              id="totalInvestment"
+              class="input-field"
+              placeholder="Enter total investment"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="returnRate"
+              >Expected Return Rate (% p.a.):</label
+            >
+            <input
+              type="number"
+              id="returnRate"
+              class="input-field"
+              placeholder="Enter return rate"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="timePeriod"
+              >Time Period (years):</label
+            >
+            <input
+              type="number"
+              id="timePeriod"
+              class="input-field"
+              placeholder="Enter time period"
+              required
+            />
+          </div>
+          <button onclick="calculateMutualFund()" class="calculate-button">
+            Calculate
+          </button>
+
+          <div class="chart-container">
+            <canvas id="mfChart" width="400" height="200"></canvas>
+          </div>
+
+          <a
+            href="https://www.example.com"
+            class="invest-button"
+            id="investNow"
+            target="_blank"
+            >Invest Now</a
+          >
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="single-video" data-category="basics">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/DNYCgsyOAW4?si=d5l687u4jD-J58us"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Financial Basics</h2>
+            <p>
+              Does the word 'finance' scare you? Do not worry, you are not
+              alone. Many people get demotivated from exploring the world of
+              finance just by hearing the heavy terms used in this industry. So,
+              I thought I should help out and try to simplify some key important
+              terms.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="basics">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/D3uC-MmkwbI?si=wNq3EYOLOpkXxkey"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Financial Basics</h2>
+            <p>
+              Hello friends, in this video, we will explain what finance is and
+              what we mean by finance. You will find information about this in
+              this video. Please watch this video in its entirety.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="basics">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/6sq2o1atWLY?si=U7laHJWsMhwp-ch7"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Financial Basics</h2>
+            <p>
+              A common personal finance mistake we all make is not starting to
+              invest early, even if we can. Maybe it's because of the youthful
+              naïveté, but early on in our careers, we think that saving small
+              amounts doesn't matter. We don't realize that even small amounts
+              compounded over long periods of time will grow into large sums.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="goals">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/4pp77eJ9p6I?si=YMWuQHm79ssT5p9U"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Financial Goals</h2>
+            <p>
+              A common personal finance mistake we all make is not starting to
+              invest early, even if we can. Maybe it's because of the youthful
+              naïveté, but early on in our careers, we think that saving small
+              amounts doesn't matter. We don't realize that even small amounts
+              compounded over long periods of time will grow into large sums.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="goals">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/7MZ0g6n6huE?si=l8fVnW9o4ihiMTFY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Financial Goals</h2>
+            <p>
+              Financial goals are specific objectives or targets you set for
+              your finances. They represent what you want to achieve financially
+              in the future. These goals can include things like saving for a
+              vacation, buying a home, building an emergency fund, paying off
+              debt, or planning for retirement. Financial goals help you
+              prioritize your spending and saving, giving you a clear direction
+              for managing your money to fulfill your aspirations and achieve
+              financial security.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="debt">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/J8dndHQX6rk?si=pQ6Cv1KgKqAMEJGA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Debt Management</h2>
+            <p>
+              It's very easy to fall into debt—especially if you are supporting
+              a growing family. Many borrowers find their debt statements
+              terrifying and can't face looking at their own loan balances.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="insurance">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/sSslD272QIw?si=qrE_u3zaVxBt534X"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Insurance</h2>
+            <p>
+              Insurance is a financial arrangement where you pay a company a
+              small amount of money (premium) regularly, and in return, they
+              promise to help cover the costs of unexpected events like
+              accidents, illnesses, or damages to your property. It provides
+              protection and financial security, ensuring that you won't face
+              significant financial hardship if something unexpected happens,
+              making it a valuable safety net for individuals and businesses.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="invest">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/1DRq8N7SpYc?si=VBftaNRTFnfcFgGn"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Investment</h2>
+            <p>
+              Investment, in simple terms, is the process of using your money to
+              purchase assets or items with the expectation that they will
+              generate more money for you in the future. It's like planting a
+              seed with the hope that it will grow into a larger tree that
+              yields fruit. When you invest, you're essentially putting your
+              money to work for you, whether it's by buying stocks, real estate,
+              starting a business, or even saving in an interest-bearing
+              account. The goal is to make your money grow over time and create
+              wealth or achieve specific financial objectives, like retirement
+              or buying a home.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="invest">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/PPu8BHoZiQE?si=k2VATdjApBCz7WXJ"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Investment</h2>
+            <p>
+              Investment, in simple terms, is the process of using your money to
+              purchase assets or items with the expectation that they will
+              generate more money for you in the future. It's like planting a
+              seed with the hope that it will grow into a larger tree that
+              yields fruit. When you invest, you're essentially putting your
+              money to work for you, whether it's by buying stocks, real estate,
+              starting a business, or even saving in an interest-bearing
+              account. The goal is to make your money grow over time and create
+              wealth or achieve specific financial objectives, like retirement
+              or buying a home.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="sip">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/1DRq8N7SpYc?si=_LmYe0HErAU05LzA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>SIP</h2>
+            <p>
+              SIP, or Systematic Investment Plan, in simple words, is a way to
+              regularly save and invest your money in mutual funds. Instead of
+              putting a lump sum amount at once, with SIP, you invest a fixed
+              amount of money at regular intervals, usually monthly. It's like
+              setting aside a small portion of your income each month to buy
+              mutual fund units. SIP helps you build wealth gradually over time
+              by taking advantage of the power of compounding, where your
+              investments earn returns, and those returns also generate more
+              returns. It's a disciplined and convenient way to grow your
+              savings and work toward your financial goals.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="sip">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/g0NqN0ohwXE?si=mqYvgZhPY1sWc1pa"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>SIP</h2>
+            <p>
+              SIP, or Systematic Investment Plan, in simple words, is a way to
+              regularly save and invest your money in mutual funds. Instead of
+              putting a lump sum amount at once, with SIP, you invest a fixed
+              amount of money at regular intervals, usually monthly. It's like
+              setting aside a small portion of your income each month to buy
+              mutual fund units. SIP helps you build wealth gradually over time
+              by taking advantage of the power of compounding, where your
+              investments earn returns, and those returns also generate more
+              returns. It's a disciplined and convenient way to grow your
+              savings and work toward your financial goals.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="sip">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/NTFdnoJoZeU?si=rYgFBx8use9arfBl"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>SIP</h2>
+            <p>
+              SIP, or Systematic Investment Plan, in simple words, is a way to
+              regularly save and invest your money in mutual funds. Instead of
+              putting a lump sum amount at once, with SIP, you invest a fixed
+              amount of money at regular intervals, usually monthly. It's like
+              setting aside a small portion of your income each month to buy
+              mutual fund units. SIP helps you build wealth gradually over time
+              by taking advantage of the power of compounding, where your
+              investments earn returns, and those returns also generate more
+              returns. It's a disciplined and convenient way to grow your
+              savings and work toward your financial goals.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="mutual">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/rsFBpGUAZWA?si=LtwUSYkMfW4w_9xv"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Mutual Funds</h2>
+            <p>
+              Mutual funds, in simple terms, are like a pool of money collected
+              from many investors to invest in a variety of stocks, bonds, or
+              other assets. When you invest in a mutual fund, you're buying
+              shares of the fund, which represent a portion of the total assets
+              it holds. Professional fund managers make investment decisions on
+              your behalf, aiming to grow the fund's value over time.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="mutual">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/8KZdWtlCpuw?si=7N_X9Ln39KB4oGUq"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Mutual Funds</h2>
+            <p>
+              Mutual funds, in simple terms, are like a pool of money collected
+              from many investors to invest in a variety of stocks, bonds, or
+              other assets. When you invest in a mutual fund, you're buying
+              shares of the fund, which represent a portion of the total assets
+              it holds. Professional fund managers make investment decisions on
+              your behalf, aiming to grow the fund's value over time.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="mutual">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/8A3s9WP_7l4?si=k5DIquc5LiyzDcMS"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Mutual Funds</h2>
+            <p>
+              Mutual funds, in simple terms, are like a pool of money collected
+              from many investors to invest in a variety of stocks, bonds, or
+              other assets. When you invest in a mutual fund, you're buying
+              shares of the fund, which represent a portion of the total assets
+              it holds. Professional fund managers make investment decisions on
+              your behalf, aiming to grow the fund's value over time.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="retirement">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/G2ommOkyMso?si=Wf4iWLaAeMpoCtvo"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Retirement Planning</h2>
+            <p>
+              Retirement planning, in simple words, is the process of making
+              sure you have enough money and resources to support yourself
+              comfortably after you stop working. It involves saving and
+              investing money during your working years so that you can maintain
+              your lifestyle and cover your expenses when you no longer have a
+              regular income from a job. Retirement planning includes setting
+              financial goals, estimating how much money you'll need for
+              retirement, choosing retirement accounts like pensions, 401(k)s,
+              or IRAs, and regularly contributing to them. It's like preparing
+              for a long vacation where you need to save enough money to enjoy
+              your life without having to work. The goal is to have a
+              financially secure and enjoyable retirement.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="retirement">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/uO8EoK6wUIY?si=-vdIjuaGpiH1K2yk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Retirement Planning</h2>
+            <p>
+              Retirement planning, in simple words, is the process of making
+              sure you have enough money and resources to support yourself
+              comfortably after you stop working. It involves saving and
+              investing money during your working years so that you can maintain
+              your lifestyle and cover your expenses when you no longer have a
+              regular income from a job. Retirement planning includes setting
+              financial goals, estimating how much money you'll need for
+              retirement, choosing retirement accounts like pensions, 401(k)s,
+              or IRAs, and regularly contributing to them. It's like preparing
+              for a long vacation where you need to save enough money to enjoy
+              your life without having to work. The goal is to have a
+              financially secure and enjoyable retirement.
+            </p>
+          </div>
+        </div>
+        <div class="single-video" data-category="retirement">
+          <div class="video">
+            <iframe
+              width="300"
+              height="200"
+              src="https://www.youtube.com/embed/BxAQOgTjVD0?si=ACx6ShBJ7FIWeIzF"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="description">
+            <h2>Retirement Planning</h2>
+            <p>
+              Retirement planning, in simple words, is the process of making
+              sure you have enough money and resources to support yourself
+              comfortably after you stop working. It involves saving and
+              investing money during your working years so that you can maintain
+              your lifestyle and cover your expenses when you no longer have a
+              regular income from a job. Retirement planning includes setting
+              financial goals, estimating how much money you'll need for
+              retirement, choosing retirement accounts like pensions, 401(k)s,
+              or IRAs, and regularly contributing to them. It's like preparing
+              for a long vacation where you need to save enough money to enjoy
+              your life without having to work. The goal is to have a
+              financially secure and enjoyable retirement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="educational.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      function calculateSIP() {
+        const investmentAmount = parseFloat(
+          document.getElementById("investmentAmount").value
+        );
+        const interestRate =
+          parseFloat(document.getElementById("interestRate").value) / 100;
+        const investmentDuration = parseFloat(
+          document.getElementById("investmentDuration").value
+        );
+
+        let futureValues = [];
+
+        let currentBalance = 0;
+        for (let i = 0; i < investmentDuration; i++) {
+          currentBalance += investmentAmount * 12;
+          currentBalance += (currentBalance * interestRate) / 12;
+          futureValues.push(currentBalance.toFixed(2));
+        }
+
+        const ctx = document.getElementById("sipChart").getContext("2d");
+
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: Array.from({ length: investmentDuration }, (_, i) =>
+              (i + 1).toString()
+            ),
+            datasets: [
+              {
+                label: "SIP Growth Over Time (INR)",
+                data: futureValues,
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              x: {
+                ticks: {
+                  color: "white", // X-axis label color
+                },
+                grid: {
+                  color: "white", // X-axis gridlines color
+                },
+              },
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  color: "white", // Y-axis label color
+                },
+                grid: {
+                  color: "white", // Y-axis gridlines color
+                },
+              },
+            },
+          },
+        });
+      }
+
+      function calculateMutualFund() {
+        const totalInvestment = parseFloat(
+          document.getElementById("totalInvestment").value
+        );
+        const returnRate =
+          parseFloat(document.getElementById("returnRate").value) / 100;
+        const timePeriod = parseFloat(
+          document.getElementById("timePeriod").value
+        );
+
+        // Calculate estimated returns and total value
+        const estimatedReturns =
+          totalInvestment * Math.pow(1 + returnRate, timePeriod);
+        const totalValue = totalInvestment + estimatedReturns;
+
+        // Display estimated returns and total value
+        alert(
+          `Estimated Returns: INR ${estimatedReturns.toFixed(
+            2
+          )}\nTotal Value: INR ${totalValue.toFixed(2)}`
+        );
+
+        // Create a pie chart using Chart.js
+        const ctx = document.getElementById("mfChart").getContext("2d");
+        new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: ["Invested Amount", "Estimated Returns"],
+            datasets: [
+              {
+                data: [totalInvestment, estimatedReturns],
+                backgroundColor: ["#357a38", "#ff6600"],
+              },
+            ],
+          },
+        });
+
+        // Set the Invest Now button to redirect to a mutual funds website (replace 'https://www.example.com' with the actual URL)
+        document.getElementById("investNow").href = "https://www.example.com";
+      }
+    </script>
+  </body>
+</html>

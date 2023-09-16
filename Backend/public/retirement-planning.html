@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="retirement-planning.css" />
+    <title>Retirement Planning</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="header-content">
+          <p>
+            Retirement Planning involves the disciplined accumulation of a
+            planned amount of money, by a specific target date. This money must
+            be sufficient to provide you with an inflation-proof income that
+            will comfortably outlast you, as well as your dependent partner. In
+            addition, this fund must be sufficient to take care of medical
+            emergencies, allow you to travel, as well as enjoy the free time
+            you'll have at hand once you hang up your work boots for good!
+          </p>
+          <br />
+          <p>
+            Most of us in India do not adopt a planned approach to our
+            retirement planning, and this often leads to much strife in our
+            twilight years.
+          </p>
+        </div>
+        <div class="main-header">
+          <h2>What's driving the need for a solid retirement plan?</h2>
+        </div>
+        <div class="main-content">
+          <div class="card">
+            <img src="img/ret-1.png" alt="" />
+            <h3>Increasing Lifespans</h3>
+            <p>
+              On average, lifespans in India are going up by 5 years every
+              decade - and so is the risk of your outliving your savings.
+            </p>
+          </div>
+          <div class="card">
+            <img src="img/ret-2.png" alt="" />
+            <h3>Inflation</h3>
+            <p>
+              Long term inflation in India has hovered around 6.5%. A soft drink
+              now costs more than 15 times what it did when your parents were
+              your age!
+            </p>
+          </div>
+          <div class="card">
+            <img src="img/ret-3.png" alt="" />
+            <h3>Nuclear Families</h3>
+            <p>
+              More than 70% of urban households now have only one couple. With
+              joint families breaking down, one needs to be more retirement
+              ready.
+            </p>
+          </div>
+        </div>
+        <div class="dyk">
+          <h2>Did you know?</h2>
+          <p>
+            The correct time to start planning for your retirement is the day
+            you receive your first paycheck. Well begun is half done. With
+            Retirement Planning, the costs of delay can be staggering!
+          </p>
+        </div>
+        <div class="ret-list">
+          <h2>
+            Retirement planning mistakes you could be making… Retirement plan?
+          </h2>
+          <ul>
+            <li>Always postponing it for “a better time”</li>
+            <li>
+              Blindly purchasing low-yielding insurance polices for your
+              retirement
+            </li>
+            <li>
+              Saving only into fixed return instruments such as fixed deposits
+              and ppf
+            </li>
+            <li>
+              Occasionally drawing upon your retirement fund for short term
+              “wants”
+            </li>
+            <li>Saving without a proper target in mind</li>
+            <li>
+              According it the lowest priority, compared to your other goals
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="side-content">
+        <div class="calc-container">
+          <h1>Retirement Budget Calculator</h1>
+          <div class="input-container">
+            <label class="input-label" for="currentAge">Current Age:</label>
+            <input
+              type="number"
+              id="currentAge"
+              class="input-field"
+              placeholder="Enter current age"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="monthlyExpense"
+              >Current Monthly Expense (INR):</label
+            >
+            <input
+              type="number"
+              id="monthlyExpense"
+              class="input-field"
+              placeholder="Enter monthly expense"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="retirementAge"
+              >Desired Retirement Age:</label
+            >
+            <input
+              type="number"
+              id="retirementAge"
+              class="input-field"
+              placeholder="Enter desired retirement age"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="corpusLastYears"
+              >Corpus Should Last Till (Years After Retirement):</label
+            >
+            <input
+              type="number"
+              id="corpusLastYears"
+              class="input-field"
+              placeholder="Enter years corpus should last"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="existingSavings"
+              >Existing Savings (INR) (Expected to grow by 7% per year):</label
+            >
+            <input
+              type="number"
+              id="existingSavings"
+              class="input-field"
+              placeholder="Enter existing savings"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label class="input-label" for="monthlyIncomePostRetirement"
+              >Monthly Income Post Retirement (INR):</label
+            >
+            <input
+              type="number"
+              id="monthlyIncomePostRetirement"
+              class="input-field"
+              placeholder="Enter monthly income"
+              required
+            />
+          </div>
+          <button
+            onclick="calculateRetirementBudget()"
+            class="calculate-button"
+          >
+            Calculate
+          </button>
+
+          <div class="chart-container">
+            <canvas id="retirementChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+
+        <!-- <div class="dyk">
+          <h2>Did you know?</h2>
+          <p>
+            The correct time to start planning for your retirement is the day
+            you receive your first paycheck. Well begun is half done. With
+            Retirement Planning, the costs of delay can be staggering!
+          </p>
+        </div>
+        <div class="ret-list">
+          <h2>
+            Retirement planning mistakes you could be making… Retirement plan?
+          </h2>
+          <ul>
+            <li>Always postponing it for “a better time”</li>
+            <li>
+              Blindly purchasing low-yielding insurance polices for your
+              retirement
+            </li>
+            <li>
+              Saving only into fixed return instruments such as fixed deposits
+              and ppf
+            </li>
+            <li>
+              Occasionally drawing upon your retirement fund for short term
+              “wants”
+            </li>
+            <li>Saving without a proper target in mind</li>
+            <li>
+              According it the lowest priority, compared to your other goals
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Function to calculate retirement budget and display the chart
+      function calculateRetirementBudget() {
+        const currentAge = parseFloat(
+          document.getElementById("currentAge").value
+        );
+        const monthlyExpense = parseFloat(
+          document.getElementById("monthlyExpense").value
+        );
+        const retirementAge = parseFloat(
+          document.getElementById("retirementAge").value
+        );
+        const corpusLastYears = parseFloat(
+          document.getElementById("corpusLastYears").value
+        );
+        const existingSavings = parseFloat(
+          document.getElementById("existingSavings").value
+        );
+        const monthlyIncomePostRetirement = parseFloat(
+          document.getElementById("monthlyIncomePostRetirement").value
+        );
+        const currentYear = new Date().getFullYear();
+
+        // Calculate the retirement corpus needed
+        const yearsInRetirement = retirementAge - currentAge + corpusLastYears;
+        let annualExpenses = 0;
+        let cumulativeSavings = existingSavings;
+        const savingsEachMonth = [];
+
+        for (let i = 1; i <= yearsInRetirement; i++) {
+          annualExpenses +=
+            ((monthlyExpense - monthlyIncomePostRetirement) * 12) /
+            Math.pow(1.07, i);
+        }
+
+        // Calculate monthly savings
+        for (let i = 1; i <= yearsInRetirement * 12; i++) {
+          const monthlyExpenseAfterRetirement =
+            ((monthlyExpense - monthlyIncomePostRetirement) * 12) /
+            Math.pow(1.07, Math.ceil(i / 12));
+          cumulativeSavings += monthlyExpenseAfterRetirement;
+          savingsEachMonth.push(cumulativeSavings);
+        }
+
+        // Display required corpus
+        alert(`Required Retirement Corpus: INR ${annualExpenses.toFixed(2)}`);
+
+        // Create a line chart using Chart.js
+        const ctx = document.getElementById("retirementChart").getContext("2d");
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: Array.from({ length: yearsInRetirement * 12 }, (_, i) =>
+              (currentYear + Math.floor(i / 12)).toString()
+            ),
+            datasets: [
+              {
+                label: "Cumulative Savings (INR)",
+                data: savingsEachMonth,
+                fill: false,
+                borderColor: "white",
+                pointBackgroundColor: "white",
+              },
+            ],
+          },
+          options: {
+            scales: {
+              x: {
+                grid: {
+                  color: "white",
+                },
+              },
+              y: {
+                beginAtZero: true,
+                maxTicksLimit: 5,
+              },
+            },
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

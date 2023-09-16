@@ -3,6 +3,7 @@ const cors = require("cors");
 const connectDB = require("./db/connect");
 const authRouter = require("./routes/auth");
 const budgetRouter = require("./routes/budgets");
+const messagesRouter = require("./routes/messages");
 require("dotenv").config();
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/budgets", budgetRouter);
+app.use("/api/v1/messages", messagesRouter);
 
 const PORT = process.env.PORT || 5000;
 

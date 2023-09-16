@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Opening</title>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Include Bootstrap CSS and JS files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Custom CSS for curved borders, radius, and color */
+        .accordion-item {
+            border: 2px solid #5EBE30;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            width: 1000px;
+            
+        }
+        .accordion {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 500px; /* Optional: Limit the maximum width of the accordion */
+            margin-left: 400px;
+}
+
+
+        .accordion-button {
+            background-color: #5EBE30;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #5EBE30;
+        }
+
+        .accordion-body {
+            border-top: 1px solid #5EBE30;
+            
+        }
+
+            .accordion-body img {
+    width: 500px; /* Make sure the image doesn't exceed the container */
+    border-radius: 10px; /* Optional: Apply border radius to the image */
+    margin-top: 10px auto; /* Optional: Add margin to the top of the image */
+   
+}
+    .custom-button{
+        width: 100px;
+        background-color: #143106;
+        color: white;
+        border-radius: 10px;
+        margin-left: 400px;
+        margin-top: 10px;
+    }
+    .custom-button:hover{
+        background-color: #5EBE30;
+        color: white;
+    }
+        
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <div class="navbar">
+        <a
+          href="#home"
+          style="color: rgb(6, 75, 4); font-size: 30px; padding: 10px"
+          >Financia</a
+        >
+        <a href="dashboard.html">Home</a>
+        <a href="#news">About</a>
+        <a href="/Backend/public/chatbot/templates/chatbot.html">Chatbot</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Fin-Edu
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="financialbasics.html">Finance Basics</a>
+            <a href="financial.html">Financial Goals</a>
+            <a href="debt-management.html">Debt Management</a>
+            <a href="retirement-planning.html">Retirement Management</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Banking Section
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="welcome.html">Accounts</a>
+            <a href="Opening Account.html">Opening Accounts</a>
+            <a href="Atm.html">ATM Usages</a>
+            <a href="card.html">Credit & Loans</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Resources
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="budget.html">Expense Tracker</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="educational.html">E-Learning</a>
+          </div>
+        </div>
+        <a href="#">Contact</a>
+        <a href="#" style="margin-left: 700px">Logout</a>
+      </div>
+    <div class="accordion" id="accordionExample">
+        <!-- Step 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Step 1: Choose 'The Right Banking Partner’
+                   
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    The first and foremost step in opening a bank account is to find the best banking partner for your needs and preferences. When shortlisting banks, one must ensure that a few factors are taken into account. If you’re going to open a savings account, you will want to maximize the interest earned on your account balance. Keep an eye out for banks with higher interest rates that will allow you to profit more. Another important factor to consider is the minimum balance requirements set by individual banks. Some bank accounts may have a minimum balance requirement, whereas others may have a zero balance requirement.
+                </div>
+              
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Step 2: Visit the Bank or go to their Website/ App
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Once you’ve decided on a banking partner, go to their branch or website. If you are visiting in person, proceed to the counter and request the form and process for opening a new account. If you’re doing it online, navigate to the appropriate section and select the option to open an account.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Step 3: Fill out the Application Form
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Here you will enter your basic information, such as your name, date of birth, email address, phone number, and so on. Fill out the form completely, then submit it.
+                </div>
+               <center> <img src="application.png" alt="Step 2 Image"></center>
+                <button class="custom-button" onclick="window.open('https://youtu.be/xqzwoN5cQZE?si=M0z8yjFwP_bB6--p', '_blank')">Click here to Learn</button>
+            </body>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Step 4: Submit the Necessary Paperwork
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    After completing the application form, you must attach copies of the required documents. This list may differ slightly from one bank to the next. According to the requirements of certain banks, you may be required to self-attest the copies of your documents before submitting them. Some of the mandatory documents that must be included in the necessary paperwork are as follows:
+                    <ul>
+                        <li>Aadhaar card</li>
+                        <li>Proof of identity and address – PAN card, driver’s license, and passport</li>
+                        <li>Form 16 (required only if the individual does not have a PAN card)</li>
+                        <li>Most recent passport-size photographs</li>
+                    </ul>
+                </div>
+                <img src="aadhar.png" alt="Step 2 Image">
+                <img src="pancard.png" alt="Step 2 Image" width="300px" height="200px"  >
+               <center><img src="Form-16-A .png" alt="Step 2 Image" width="500px" height="750px"  ></center>
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Step 5: Complete KYC Process
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    If the account was opened online, Know Your Customer (KYC) must be completed online via a video call. To proceed, one must confirm their identity and ensure that they are who they claim to be.
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Step 6: Make an initial deposit
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Once the account is opened, the customer must physically visit the bank and make an initial deposit in accordance with the bank’s regulations. Following the verification process, a passbook and chequebook will be issued.
+                </div>
+                <center><img src="bob-deposit-slip.png" alt="Step 2 Image" width="1000px" height="750px"  ></center>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="container flex footer-container">
+           
+            <a href="#" class="company-logo">
+                <h1 class="logo">Financia</h1>
+                </a>
+            <div class="link-column flex">
+                <h4>Product</h4>
+                <a href="#" class="hover-link">Overview</a>
+                <a href="#" class="hover-link">Pricing</a>
+                <a href="#" class="hover-link">UsabilityHub panel</a>
+                <a href="#" class="hover-link"> Customers</a>
+                <a href="#" class="hover-link">Status page</a>
+            </div>
+
+            <div class="link-column flex">
+                <h4>Methodologies</h4>
+                <a href="#" class="hover-link">Card sorting</a>
+                <a href="#" class="hover-link">   Prototype testing</a>
+                <a href="#" class="hover-link">First click tests</a>
+                <a href="#" class="hover-link"> Preference tests</a>
+                <a href="#" class="hover-link">Five second tests</a>
+            </div>
+
+            <div class="link-column flex">
+                <h4>Resources</h4>
+                <a href="#" class="hover-link">Blog</a>
+                <a href="#" class="hover-link">Examples</a>
+                <a href="#" class="hover-link">Testing guides</a>
+                <a href="#" class="hover-link"> Help center</a>
+                <a href="#" class="hover-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

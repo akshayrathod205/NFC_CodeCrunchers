@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Fund Calculator</title>
+    <style>
+        /* CSS for styling the calculator */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #fff;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .input-label {
+            flex: 1;
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        .input-field {
+            flex: 2;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .input-field:focus {
+            outline: none;
+        }
+
+        .calculate-button {
+            background-color: #357a38;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculate-button:hover {
+            background-color: #2e5727;
+        }
+
+        .chart-container {
+            margin-top: 20px;
+        }
+
+        .invest-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .invest-button:hover {
+            background-color: #cc5500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mutual Fund Calculator</h1>
+        <div class="input-container">
+            <label class="input-label" for="totalInvestment">Total Investment (INR):</label>
+            <input type="number" id="totalInvestment" class="input-field" placeholder="Enter total investment" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="returnRate">Expected Return Rate (% p.a.):</label>
+            <input type="number" id="returnRate" class="input-field" placeholder="Enter return rate" required>
+        </div>
+        <div class="input-container">
+            <label class="input-label" for="timePeriod">Time Period (years):</label>
+            <input type="number" id="timePeriod" class="input-field" placeholder="Enter time period" required>
+        </div>
+        <button onclick="calculateMutualFund()" class="calculate-button">Calculate</button>
+
+        <div class="chart-container">
+            <canvas id="mfChart" width="400" height="200"></canvas>
+        </div>
+
+        <a href="https://www.example.com" class="invest-button" id="investNow" target="_blank">Invest Now</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Function to calculate mutual fund details and display the chart
+        function calculateMutualFund() {
+            const totalInvestment = parseFloat(document.getElementById('totalInvestment').value);
+            const returnRate = parseFloat(document.getElementById('returnRate').value) / 100;
+            const timePeriod = parseFloat(document.getElementById('timePeriod').value);
+
+            // Calculate estimated returns and total value
+            const estimatedReturns = totalInvestment * Math.pow(1 + returnRate, timePeriod);
+            const totalValue = totalInvestment + estimatedReturns;
+
+            // Display estimated returns and total value
+            alert(`Estimated Returns: INR ${estimatedReturns.toFixed(2)}\nTotal Value: INR ${totalValue.toFixed(2)}`);
+
+            // Create a pie chart using Chart.js
+            const ctx = document.getElementById('mfChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Invested Amount', 'Estimated Returns'],
+                    datasets: [{
+                        data: [totalInvestment, estimatedReturns],
+                        backgroundColor: ['#357a38', '#ff6600'],
+                    }]
+                }
+            });
+
+            // Set the Invest Now button to redirect to a mutual funds website (replace 'https://www.example.com' with the actual URL)
+            document.getElementById('investNow').href = 'https://www.example.com';
+        }
+    </script>
+</body>
+</html>

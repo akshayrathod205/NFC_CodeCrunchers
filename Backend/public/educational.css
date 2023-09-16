@@ -1,0 +1,184 @@
+/* .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.side-bar {
+  width: 30%;
+  height: 100%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  margin-top: 0;
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+}
+
+.side-bar ul li {
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.side-bar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.video-container {
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.single-video {
+  display: flex;
+  flex-direction: row;
+}
+
+.description {
+    margin: 20px;
+    margin-bottom: 50px;
+    padding: 20px;
+    margin-top: 0;
+    padding-top: 0;
+} */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.side-bar {
+  width: 20%;
+  height: 100%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  margin-top: 0;
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Updated margin to 0 */
+}
+
+.side-bar ul li {
+  padding: 10px;
+  margin: 0; /* Updated margin to 0 */
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  margin-bottom: 10px; /* Added margin-bottom */
+}
+
+.side-bar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.side-bar ul li.active {
+  background-color: #5ebe30; /* You can set your preferred background color */
+  color: white; /* You can set the text color to make it more readable */
+}
+
+.video-container {
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.single-video {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px; /* Added margin-bottom */
+}
+
+.description {
+  margin: 0; /* Updated margin to 0 */
+  padding: 20px;
+  padding-top: 0;
+}
+
+.calc-container {
+  background-color: #4caf50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+}
+
+.calc-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.input-label {
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.input-field {
+  flex: 2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.calculate-button {
+  background-color: #357a38;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculate-button:hover {
+  background-color: #2e5727;
+}
+
+.chart-container {
+  margin-top: 20px;
+}
+
+.invest-button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.invest-button:hover {
+  background-color: #cc5500;
+}

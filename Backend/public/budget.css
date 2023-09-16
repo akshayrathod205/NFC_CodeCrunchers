@@ -1,0 +1,141 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    border: 1px solid #23570A;
+  }
+  
+  h2 {
+    color: #23570A;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    text-align: left;
+    margin-bottom: 5px;
+    color: #23570A;
+    font-weight: bold;
+    
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #23570A;
+    border-radius: 5px;
+    height: 30px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #23570A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 50px;
+    width: 100px;
+    align-content: center;
+    margin-left: 200px;
+  }
+  
+  .switch {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .switch a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+
+  /* Container for the cards */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Card styles */
+.cards {
+    width: 25%;
+    background-color: #fdfdfd; /* Green background color */
+    border: 2px solid #23570A; /* Green border */
+    border-radius: 5px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Card shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transitions for pop-up and glow effects */
+}
+
+.cards:hover {
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3), 0px 6px 6px rgba(0, 0, 0, 0.2); /* Apply a glowing shadow on hover */
+}
+
+
+/* Slider styles */
+
+.slider {
+    width: 80%;
+    margin-top: 10px;
+}
+
+/* Card title styles */
+.card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* click here button css */
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #23570A; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none; /* Remove underline from the link */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-link:hover {
+    background-color: #C1FDA5; /* Change color on hover */
+    color: #23570A;
+    border: 2px solid #23570A; /* Green border */
+    font-weight: bold;
+
+}
+
+/*  */
+output {
+    font-weight: 600;
+    text-align: center;
+  }

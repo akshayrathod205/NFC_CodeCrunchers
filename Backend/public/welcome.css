@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #76cb76;
+    
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  nav {
+    background-color: #5EBE30;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .card {
+    display: flex; /* Use flexbox to arrange content and image side by side */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+    border: 3px solid #054701;
+    margin-bottom: 20px;
+  }
+  
+  .card-image {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+    justify-content: right; /* Make the image container take up 50% of the card's width */
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+    justify-content: right;
+    border-radius: 0 20px 20px 0; /* Rounded corners for the right side of the image */
+    width: 50%;
+    padding-left: 100px;
+}
+  
+  .card-content {
+    flex: 1; /* Make the content container take up 50% of the card's width */
+    padding: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    background-color: #31dc5c;
+    color: #fff;
+
+  }
+
+  .card-content:hover{
+    color: #fff;
+  }
+  
+  
+  h2 {
+    color: #000000;
+    font-size: 1.5rem;
+  }
+  
+  p {
+    color: #151010;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%; /* Set the card width to 100% for smaller screens */
+    }
+  }
+  
