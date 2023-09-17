@@ -66,8 +66,8 @@ if __name__ == '__main__':
 # app = Flask(__name__)
 
 # # Set up OpenAI API credentials
-# # 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
-# openai.api_key = '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'
+
+# openai.api_key = ''
 
 
 # # Define the default route to return the index.html file
